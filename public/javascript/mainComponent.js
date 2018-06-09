@@ -66,19 +66,108 @@ class ParentComponent extends React.Component {
             },
             biodata: {
                 studentBioData: {
-
+                      'email': '',
+                      'facebookId': '',
+                      'religion': '',
+                      'passportPhotograph': '',
+                      'bloodGroup': '',
+                      'Genotype': '',
+                      'concurrentIllness': '',
+                      'additionMedicalInformation': '',
+                      'telephone': '',
+                      'telephone2': '',
+                      'admittedClass': '',
+                      'classStopped': '',
+                      'currentClass': '',
+                      "firstname": '',
+                      "lastname": '',
+                      'Initials': '',
+                      'sex': '',
+                      'dateOfBirth': '',
+                      'nationality': '',
+                      'homeAddress': '',
+                      'positionInCurrentClass': '',
+                      'lastTermResult': '',
+                      'classAttendance': '',
+                      'guardianPhoneNumberOne': '',
+                      'guardianPhoneNumberTwo': '',
                 },
 
                 parentBioData: {
-
+                      'email': '',
+                      'facebookId': '',
+                      "telephone": '',
+                      'telephone 2': '',
+                      "firstname": '',
+                      "lastname": '',
+                      'religion': '',
+                      'homeAddress': '',
+                      "occupation": '',
+                      "placeOfWork": '',
+                      'workAddress': '',
+                      'additionalInfo': '',
+                      'Nationality': '',
+                      'countryOfResidence': ''
                 },
 
                 teachersBioData: {
-
+                        'email': '',
+                        'facebookId': '',
+                        "telephone": '',
+                        'telephone 2': '',
+                        "firstname": '',
+                        "lastname": '',
+                        'religion': '',
+                        'homeAddress': '',
+                        'jobstatus': '',
+                        'jobrole': '',
+                        "placeOfWork": '',
+                        'workAddress': '',
+                        'additionalInfo': '',
+                        'Initials': '',
+                        'sex': '',
+                        'dateOfBirth': '',
+                        'nationality': '',
+                        'passportPhotograph': '',
+                        'bloodGroup': '',
+                        'Genotype': '',
+                        'concurrentIllness': '',
+                        'additionMedicalInformation': '',
+                        'guarantorName': '',
+                        'guarantorNumber': '',
+                        'guarantorNumber2': '',
+                        'guarantorAddress': '',
+                        'guarantorOccupation': '',
                 },
 
                 nonAcademicStaffBioData: {
-
+                    'email': '',
+                    'facebookId': '',
+                    "telephone": '',
+                    'telephone 2': '',
+                    "firstname": '',
+                    "lastname": '',
+                    'religion': '',
+                    'homeAddress': '',
+                    'jobstatus': '',
+                    'jobrole': '',
+                    "placeOfWork": '',
+                    'workAddress': '',
+                    'additionalInfo': '',
+                    'Initials': '',
+                    'sex': '',
+                    'dateOfBirth': '',
+                    'nationality': '',
+                    'passportPhotograph': '',
+                    'bloodGroup': '',
+                    'Genotype': '',
+                    'concurrentIllness': '',
+                    'additionMedicalInformation': '',
+                    'guarantorName': '',
+                    'guarantorNumber': '',
+                    'guarantorNumber2': '',
+                    'guarantorAddress': '',
+                    'guarantorOccupation': '',
                 }
             },
             positionInClass: {
@@ -118,11 +207,26 @@ class ParentComponent extends React.Component {
             },
 
             announcement: {
-
+                 pastMessage: [],
+                 currentMessage: []
             },
 
             timeTable: {
+                 monday: {
 
+                 },
+                 tuesday: {
+
+                 },
+                 wednesday: {
+
+                 },
+                 thursday: {
+
+                 }, 
+                 friday: {
+
+                 }
             },
 
             timedTest: {
@@ -134,7 +238,7 @@ class ParentComponent extends React.Component {
             },
 
             results: {
-
+                
             },
 
             CA: {

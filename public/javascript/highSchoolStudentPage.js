@@ -9,7 +9,7 @@ function highSchoolStudentPage(props) {
             return null;
         }
 
-        var courses = this.state.registeredCourses;
+        var courses = props.registeredCourses;
         var theCourses = theCourses.map(function (thisCourse) {
             <div className='coursesRegistered'>
                 <div>
@@ -57,11 +57,21 @@ function highSchoolStudentPage(props) {
     }
 
     function renderResults() {
-        return (
-                <div>
-
-                </div>
-               );
+        var counter = 0;
+        var arrayOfElements = [];
+        for(x in props.results){
+           var element = <div className="results">
+                              <ul>
+                                  <li>props.results[x]</li>
+                                  <li>x</li>
+                              </ul>
+                         </div>;
+               arrayOfElements.push(element);
+           counter++;
+           if(counter == Object.keys(props.results).length){
+               return arrayOfElements;
+           }
+        }
     }
 
     function renderAssesments(){
@@ -81,11 +91,54 @@ function highSchoolStudentPage(props) {
     }
 
     function renderBioDataComponent(){
-        return (
-                <div>
+        var counter = 0;
+        for(x in props.bioData.studentBioData){
+            var arrayOfElements = [];
+            var element = <div className='studentBioData'>
+                              <div><i className='fa fa-envelope'></i></div>
+                              <div>{x}</div>
+                              <div>{props.bioData.studentBioData[x]}</div>
+                          </div>
+            arrayOfElements.push(element);
+            counter++;
+            if (counter == Object.keys(props.bioData.studentBioData).length) {
+                return arrayOfElements;
+            }
+        }
+    }
 
-                </div>
-               );
+    function renderTimeTable(perticularDay){
+        function getTheCourse(thisClass){
+              var counter = 0;
+              var arrayOfClasses = [];
+              for(x in thisClass){
+                 var thisElement = <div className='periods'>
+                                        <ul>
+                                            <li>{thisClass[x].time}</li>
+                                            <li>{thisClass[x].subject}</li>
+                                            <li>{thisClass[x].teacher}</li>
+                                        </ul>
+                                   </div>;
+
+                 arrayOfClasses.push(thisElement);
+                 counter++;
+                 if(counter == Object.keys(thisClass).length){
+                      return arrayOfClasses;
+                 }
+              }
+        }
+
+        function getTheSchedule(thisDay){
+              for(x in thisDay){
+                 getTheCourse(thisDay[x]);
+              }
+        }
+
+        for(x in props.timeTable){
+            if(x == perticularDay){
+                getTheSchedule(props.timeTable[x]);
+            }
+        }
     }
 
         return (
@@ -113,10 +166,46 @@ function highSchoolStudentPage(props) {
                             <li onClick={props.timedTest}>Timed Test!</li>
                         </ul>
                         <div>{renderCourseComponent()}</div>
-                        <div>{renderBioDataComponent()}</div>
+                        <div>
+                            <div>
+                                <div><i className='fa fa-envelope'></i></div>
+                                <div><p>Query</p></div>
+                                <div><p>Answer</p></div>
+                            <div>
+                            {renderBioDataComponent()}
+                        </div>
                         <div>{renderTransScript()}</div>
                         <div>{renderAssignments()}</div>
-                        <div>{renderTimeTable()}</div>
+                        <div>
+                             <div>
+                                   <div><p>Monday</p></div>
+                                   <div>{renderTimeTable('monday')}</div>
+                             </div>
+                             <div>
+                                   <div><p>TuesDay</p></div>
+                                   <div>{renderTimeTable('tuesday')}</div>
+                             </div>
+                             <div>
+                                <div><p>WednesDay</p></div>
+                                <div>{renderTimeTable('wednesday')}</div>
+                             </div>
+                             <div>
+                                <div><p>ThursDay</p></div>
+                                <div>{renderTimeTable('thursday')}</div>
+                             </div>
+                             <div>
+                                <div><p>ThursDay</p></div>
+                                <div>{renderTimeTable('friday')}</div>
+                             </div>
+                             <div>
+                                <div><p>ThursDay</p></div>
+                                <div>{renderTimeTable('saturday')}</div>
+                             </div>
+                             <div>
+                                <div><p>ThursDay</p></div>
+                                <div>{renderTimeTable('sunday')}</div>
+                             </div>
+                        </div>
                         <div>{renderResults()}</div>
                         <div>{renderPastQuestions()}</div>
                         <div>{renderTimedTest()}</div>
